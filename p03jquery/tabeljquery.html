@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <style>
+        table tr th {
+            background-color: rgb(225, 248, 18);
+            transition: 0.4s;
+        }
+        table tr th:hover {
+            background-color: antiquewhite;
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+        table tr td {
+            background-color: rgb(190, 123, 162);
+            transition: 0.4s;
+        }
+
+        table tr td:hover {
+            background-color: rgb(180, 166, 148);
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+        h1 {
+            text-align: center;
+        }
+        .tabelku {
+            color: rgb(26, 79, 122);
+            width: 70%;
+            max-width: 500px;
+        }
+        .tombol{
+            width: 150px;
+            height: 50px;
+            background-color: rgb(247, 243, 47);
+            margin-right: 70px;
+            margin-top: 40px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <h1>5 kawan terbaik</h1>
+    
+    <table class="tabelku">
+        <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Aksi</th>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td class="text" id="nama1">Dina Fitri</td>
+            <td class="text" id="alt1">Ciamis</td>
+            <td class="text" id="hapus">Hapus</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td class="text" id="nama2">Nurul Jamila</td>
+            <td class="text" id="alt2">Ciamis</td>
+            <td class="text" id="hapus">Hapus</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td class="text" id="nama3">Erni Ilmi</td>
+            <td class="text" id="alt3">Tegal</td>
+            <td class="text" id="hapus">Hapus</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td class="text" id="nama4">Rahmalia Putri</td>
+            <td class="text" id="alt4">Garut</td>
+            <td class="text" id="hapus">Hapus</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td class="text" id="nama5">Eti Rohayati</td>
+            <td class="text" id="alt5">Ciamis</td>
+            <td class="text" id="hapus">Hapus</td>
+        </tr>
+
+        </table> 
+        <div class="tombol"><a onClick="alert('apakah kamu mau kembali?')" href="../index.html">kembali</a></div>
+        <script>
+            $(document).ready(function(){ $('.text').click(function(){ 
+             let text = $(this).text();
+             alert(`Anda mengklik text yang berisi text "${text}"`);
+              if(text!='Hapus'){ 
+               let text2 = prompt('Mau diubah?:', text);
+               if(!text2) return; $(this).text(text2); }
+               else{ let yakin = confirm('Yakin?'); if(!yakin) return;  } }) }) 
+           </script>
+
+    
+</body>
+</html>
