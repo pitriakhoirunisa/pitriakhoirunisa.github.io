@@ -7,8 +7,24 @@
     <title>Document</title>
 
     <style>
-        td {
-            background: rgb(225, 248, 18);
+        table tr th {
+            background-color: rgb(225, 248, 18);
+            transition: 0.4s;
+        }
+        table tr th:hover {
+            background-color: antiquewhite;
+            transform: scale(1.1);
+            transition: 0.2s;
+        }
+        table tr td {
+            background-color: rgb(190, 123, 162);
+            transition: 0.4s;
+        }
+
+        table tr td:hover {
+            background-color: rgb(180, 166, 148);
+            transform: scale(1.1);
+            transition: 0.2s;
         }
         h1 {
             text-align: center;
@@ -19,11 +35,15 @@
             max-width: 500px;
         }
         .tombol{
-            width: 30px;
-            height: 20px;
-            border-radius: 10px;
-            background-color: antiquewhite;
+            width: 150px;
+            height: 50px;
+            background-color: rgb(247, 243, 47);
+            margin-right: 70px;
+            margin-top: 40px;
+            text-align: center;
+            border-radius: 20px;
         }
+        
         
     </style>
 </head>
@@ -33,10 +53,10 @@
     
     <table class="tabelku">
         <tr>
-            <td>No</td>
-            <td>Nama</td>
-            <td>Alamat</td>
-            <td>Aksi</td>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Aksi</th>
         </tr>
 
         <tr>
