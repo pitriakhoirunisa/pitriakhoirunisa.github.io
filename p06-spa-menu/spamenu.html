@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple SPA</title>
+	<style type="text/css">
+		body{
+			background-color: rgb(185, 141, 141);
+		}
+
+		.navigasi{
+			background-color: rgb(112, 114, 114);
+			padding: 10px;
+		}
+
+		.menu{
+			padding: 10px;
+			color: rgb(1, 0, 8);
+		}
+		.menu:hover{
+			cursor: pointer;
+			background-color: rgb(243, 159, 159);
+		}
+
+		.aktif{
+			background-color: #e98a8a;
+		}
+
+		.home{
+			background-color: white;
+			padding: 10px;
+		}
+
+		.isi{
+			display: none;
+			background-color: white;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="navigasi">
+		<span class="menu aktif" id="menu_1">Home</span>
+		<span class="menu" id="menu_2">Produk</span>
+        <span class="menu" id="menu_3">Kontak</span>
+	</div>
+	<div class="home" id="isi_1">
+		<h2>Menu Home</h2>
+        <h3>
+            u're truly my home
+        </h3>
+        <h4>
+            When i'am in pain I always run to you since you are my home. 
+            no matter what’s going on in the world,
+            You’re the light to my life and I  truly don’t know what life would be  without you.
+            when i stress karena byk tugas, kamu selalu menjadi tempat pulang. Terima kasih ya!
+        </h4>
+	</div>
+	<div class="isi" id="isi_2">
+		<h2>Menu Produk</h2>
+        <h3> Stop kliking my produk, start kliking my heart instead</h3>
+	</div>
+	<div class="isi" id="isi_3">
+		<h2>Menu Kontak</h2>
+        <h3>
+            i have nothing, if u need me just calling my parents or come to my house. Langsung IJAB!
+        </h3>
+	</div>
+    
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $(".menu").click(function(){
+		        let menu_id = $(this).prop('id');
+		        let split = menu_id.split('_');
+		        let id = split[1];
+
+		        $(".menu").removeClass('aktif');
+		        $("#menu_"+id).addClass('aktif');
+
+		        $(".home").slideUp();
+		        $("#isi_1").slideUp();
+		        $("#isi_2").slideUp();
+		        $("#isi_3").slideUp();
+		        $("#isi_"+id).slideToggle();
+		    });
+		});
+	</script>
+</body>
+</html>
